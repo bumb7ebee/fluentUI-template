@@ -39,15 +39,15 @@ Item {
         FluTheme.darkMode = SettingsHelper.getDarkMode()
         FluTheme.enableAnimation = true
         FluApp.routes = {
-            "/": "qrc:/qml/window/MainWindow.qml",
-            "/about": "qrc:/qml/window/AboutWindow.qml",
-            "/login": "qrc:/qml/window/LoginWindow.qml",
-            "/hotload": "qrc:/qml/window/HotloadWindow.qml",
-            "/crash": "qrc:/qml/window/CrashWindow.qml",
-            "/singleTaskWindow": "qrc:/qml/window/SingleTaskWindow.qml",
-            "/standardWindow": "qrc:/qml/window/StandardWindow.qml",
-            "/singleInstanceWindow": "qrc:/qml/window/SingleInstanceWindow.qml",
-            "/pageWindow": "qrc:/qml/window/PageWindow.qml"
+            "/": "qrc:/qml/fluentUI/window/MainWindow.qml",
+            "/about": "qrc:/qml/fluentUI/window/AboutWindow.qml",
+            "/login": "qrc:/qml/fluentUI/window/LoginWindow.qml",
+            "/hotload": "qrc:/qml/fluentUI/window/HotloadWindow.qml",
+            "/crash": "qrc:/qml/fluentUI/window/CrashWindow.qml",
+            "/singleTaskWindow": "qrc:/qml/fluentUI/window/SingleTaskWindow.qml",
+            "/standardWindow": "qrc:/qml/fluentUI/window/StandardWindow.qml",
+            "/singleInstanceWindow": "qrc:/qml/fluentUI/window/SingleInstanceWindow.qml",
+            "/pageWindow": "qrc:/qml/fluentUI/window/PageWindow.qml"
         }
         var args = Qt.application.arguments
         if (args.length >= 2 && args[1].startsWith("-crashed=")) {

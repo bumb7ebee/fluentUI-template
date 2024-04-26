@@ -24,7 +24,7 @@ FluObject{
         title:qsTr("Settings")
         menuDelegate: paneItemMenu
         icon:FluentIcons.Settings
-        url:"qrc:/qml/page/T_Settings.qml"
+        url:"qrc:/qml/fluentUI/page/T_Settings.qml"
         onTap:{
             navigationView.push(url)
         }

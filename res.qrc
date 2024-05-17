@@ -1,31 +1,16 @@
 <RCC>
     <qresource prefix="/">
-        <file compress-algo="best">res/svg/avatar_1.svg</file>
-        <file compress-algo="best">res/svg/avatar_2.svg</file>
-        <file compress-algo="best">res/svg/avatar_3.svg</file>
-        <file compress-algo="best">res/svg/avatar_4.svg</file>
-        <file compress-algo="best">res/svg/avatar_5.svg</file>
-        <file compress-algo="best">res/svg/avatar_6.svg</file>
-        <file compress-algo="best">res/svg/avatar_7.svg</file>
-        <file compress-algo="best">res/svg/avatar_8.svg</file>
-        <file compress-algo="best">res/svg/avatar_9.svg</file>
-        <file compress-algo="best">res/svg/avatar_10.svg</file>
-        <file compress-algo="best">res/svg/avatar_11.svg</file>
-        <file compress-algo="best">res/svg/avatar_12.svg</file>
-        <file compress-algo="best">res/svg/home.svg</file>
-        <file compress-algo="best">res/svg/home_dark.svg</file>
-
         <file compress-algo="best">res/image/banner_1.jpg</file>
         <file compress-algo="best">res/image/banner_2.jpg</file>
         <file compress-algo="best">res/image/banner_3.jpg</file>
-        <file compress-algo="best">res/image/logo_openai.png</file>
         <file compress-algo="best">res/image/bg_home_header.png</file>
+        <file compress-algo="best">res/image/bg_scenic.jpg</file>
+        <file compress-algo="best">res/image/ic_crash.png</file>
         <file compress-algo="best">res/image/ic_home_github.png</file>
+        <file compress-algo="best">res/image/image_1.jpg</file>
+        <file compress-algo="best">res/image/logo_openai.png</file>
         <file compress-algo="best">res/image/qrcode_wx.jpg</file>
         <file compress-algo="best">res/image/qrcode_zfb.jpg</file>
-        <file compress-algo="best">res/image/ic_crash.png</file>
-        <file compress-algo="best">res/image/bg_scenic.png</file>
-        <file compress-algo="best">res/image/image_1.jpg</file>
 
         <file compress-algo="best">res/image/control/Acrylic.png</file>
         <file compress-algo="best">res/image/control/AnimatedIcon.png</file>
@@ -126,16 +111,37 @@
         <file compress-algo="best">res/image/control/WebView.png</file>
         <file compress-algo="best">res/image/control/XamlUICommand.png</file>
 
+        <file compress-algo="best">res/svg/avatar_1.svg</file>
+        <file compress-algo="best">res/svg/avatar_2.svg</file>
+        <file compress-algo="best">res/svg/avatar_3.svg</file>
+        <file compress-algo="best">res/svg/avatar_4.svg</file>
+        <file compress-algo="best">res/svg/avatar_5.svg</file>
+        <file compress-algo="best">res/svg/avatar_6.svg</file>
+        <file compress-algo="best">res/svg/avatar_7.svg</file>
+        <file compress-algo="best">res/svg/avatar_8.svg</file>
+        <file compress-algo="best">res/svg/avatar_9.svg</file>
+        <file compress-algo="best">res/svg/avatar_10.svg</file>
+        <file compress-algo="best">res/svg/avatar_11.svg</file>
+        <file compress-algo="best">res/svg/avatar_12.svg</file>
+        <file compress-algo="best">res/svg/home.svg</file>
+        <file compress-algo="best">res/svg/home_dark.svg</file>
+
         <file compress-algo="best">qml/fluentUI/chart/T_BarChart.qml</file>
+        <file compress-algo="best">qml/fluentUI/chart/T_BubbleChart.qml</file>
         <file compress-algo="best">qml/fluentUI/chart/T_LineChart.qml</file>
         <file compress-algo="best">qml/fluentUI/chart/T_PieChart.qml</file>
+        <file compress-algo="best">qml/fluentUI/chart/T_PolarAreaChart.qml</file>
         <file compress-algo="best">qml/fluentUI/chart/T_RadarChart.qml</file>
         <file compress-algo="best">qml/fluentUI/chart/T_ScatterChart.qml</file>
-        <file compress-algo="best">qml/fluentUI/chart/T_BubbleChart.qml</file>
-        <file compress-algo="best">qml/fluentUI/chart/T_PolarAreaChart.qml</file>
+
+        <file compress-algo="best">qml/fluentUI/component/CodeExpander.qml</file>
+
+        <file compress-algo="best">qml/fluentUI/global/GlobalModel.qml</file>
+        <file compress-algo="best">qml/fluentUI/global/ItemsFooter.qml</file>
+        <file compress-algo="best">qml/fluentUI/global/ItemsOriginal.qml</file>
+        <file compress-algo="best">qml/fluentUI/global/qmldir</file>
 
         <file compress-algo="best">qml/fluentUI/page/T_Acrylic.qml</file>
-        <file compress-algo="best">qml/fluentUI/page/T_Awesome.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_Badge.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_BreadcrumbBar.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_Buttons.qml</file>
@@ -143,17 +149,22 @@
         <file compress-algo="best">qml/fluentUI/page/T_Captcha.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_Carousel.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_CheckBox.qml</file>
+        <file compress-algo="best">qml/fluentUI/page/T_Clip.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_ColorPicker.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_ComboBox.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_DatePicker.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_Dialog.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_Expander.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_FlipView.qml</file>
+        <file compress-algo="best">qml/fluentUI/page/T_GroupBox.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_Home.qml</file>
+        <file compress-algo="best">qml/fluentUI/page/T_Icons.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_Image.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_InfoBar.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_Menu.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_MultiWindow.qml</file>
+        <file compress-algo="best">qml/fluentUI/page/T_Network.qml</file>
+        <file compress-algo="best">qml/fluentUI/page/T_OpenGL.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_Pagination.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_Pivot.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_Progress.qml</file>
@@ -163,7 +174,11 @@
         <file compress-algo="best">qml/fluentUI/page/T_Rectangle.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_RemoteLoader.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_Settings.qml</file>
+        <file compress-algo="best">qml/fluentUI/page/T_Sheet.qml</file>
+        <file compress-algo="best">qml/fluentUI/page/T_ShortcutPicker.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_Slider.qml</file>
+        <file compress-algo="best">qml/fluentUI/page/T_SplitLayout.qml</file>
+        <file compress-algo="best">qml/fluentUI/page/T_StaggeredLayout.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_StatusLayout.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_TableView.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_TabView.qml</file>
@@ -178,18 +193,7 @@
         <file compress-algo="best">qml/fluentUI/page/T_TreeView.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_Typography.qml</file>
         <file compress-algo="best">qml/fluentUI/page/T_Watermark.qml</file>
-        <file compress-algo="best">qml/fluentUI/page/T_StaggeredLayout.qml</file>
-        <file compress-algo="best">qml/fluentUI/page/T_Clip.qml</file>
-        <file compress-algo="best">qml/fluentUI/page/T_3D.qml</file>
-        <file compress-algo="best">qml/fluentUI/page/T_Network.qml</file>
-        <file compress-algo="best">qml/fluentUI/page/T_ShortcutPicker.qml</file>
-        <file compress-algo="best">qml/fluentUI/page/T_SplitLayout.qml</file>
 
-        <file compress-algo="best">qml/fluentUI/component/CodeExpander.qml</file>
-
-        <file compress-algo="best">qml/fluentUI/global/ItemsFooter.qml</file>
-        <file compress-algo="best">qml/fluentUI/global/ItemsOriginal.qml</file>
-        <file compress-algo="best">qml/fluentUI/global/qmldir</file>
         <file compress-algo="best">qml/fluentUI/window/AboutWindow.qml</file>
         <file compress-algo="best">qml/fluentUI/window/HotloadWindow.qml</file>
         <file compress-algo="best">qml/fluentUI/window/LoginWindow.qml</file>
@@ -199,9 +203,6 @@
         <file compress-algo="best">qml/fluentUI/window/PageWindow.qml</file>
         <file compress-algo="best">qml/fluentUI/window/CrashWindow.qml</file>
         <file compress-algo="best">qml/fluentUI/window/FluentInitalizrWindow.qml</file>
-
-        <file compress-algo="best">qml/fluentUI/viewmodel/SettingsViewModel.qml</file>
-        <file compress-algo="best">qml/fluentUI/viewmodel/TextBoxViewModel.qml</file>
 
         <!-- iaksoy -->
         <file compress-algo="best">res/image/favicon.ico</file>

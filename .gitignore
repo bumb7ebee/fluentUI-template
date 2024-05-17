@@ -89,7 +89,6 @@ bin
 build
 cmake-build-*
 .idea
-action-cli
 dist
+package
 /Version.h
-setup

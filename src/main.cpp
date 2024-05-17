@@ -33,14 +33,16 @@
 #include <QSslConfiguration>
 #include <QtQml/qqmlextensionplugin.h>
 
-#include "fluentUI/helper/InitalizrHelper.h"
+#include "fluentUI/helper/InitializrHelper.h"
 #include "fluentUI/helper/Log.h"
+#include "fluentUI/helper/Network.h"
 #include "fluentUI/helper/SettingsHelper.h"
 #include "fluentUI/helper/TranslateHelper.h"
 
 #include "fluentUI/component/CircularReveal.h"
 #include "fluentUI/component/FileWatcher.h"
 #include "fluentUI/component/FpsItem.h"
+#include "fluentUI/component/OpenGLItem.h"
 
 #include "../Version.h"
 #include "fluentUI/AppInfo.h"
@@ -50,6 +52,10 @@
 #endif
 
 int main(int argc, char *argv[]) {
+    
+  const char *uri = "example";
+  int major = 1;
+  int minor = 0;
 
 #ifdef WIN32
   ::SetUnhandledExceptionFilter(MyUnhandledExceptionFilter);
@@ -72,10 +78,12 @@ int main(int argc, char *argv[]) {
   QGuiApplication::setApplicationName("FluentUI");
   QGuiApplication::setApplicationDisplayName("FluentUI Example");
   QGuiApplication::setApplicationVersion(APPLICATION_VERSION);
-  SettingsHelper::getInstance()->init(argv);
-  Log::setup(argv, "example");
+  QGuiApplication::setQuitOnLastWindowClosed(false);
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 5, 0))
+  SettingsHelper::getInstance()->init(argv);
+  Log::setup(argv, uri);
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
   QQuickWindow::setGraphicsApi(QSGRendererInterface::OpenGL);
 #endif
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
@@ -88,20 +96,27 @@ int main(int argc, char *argv[]) {
 #endif
 
   QGuiApplication app(argc, argv);
+
+  //@uri example
+  qmlRegisterType<CircularReveal>(uri, major, minor, "CircularReveal");
+  qmlRegisterType<FileWatcher>(uri, major, minor, "FileWatcher");
+  qmlRegisterType<FpsItem>(uri, major, minor, "FpsItem");
+  qmlRegisterType<NetworkCallable>(uri,major,minor,"NetworkCallable");
+  qmlRegisterType<NetworkParams>(uri,major,minor,"NetworkParams");
+  qmlRegisterType<OpenGLItem>(uri,major,minor,"OpenGLItem");
+  qmlRegisterUncreatableMetaObject(NetworkType::staticMetaObject, uri, major, minor, "NetworkType", "Access to enums & flags only");
+
   QQmlApplicationEngine engine;
   TranslateHelper::getInstance()->init(&engine);
 
   engine.rootContext()->setContextProperty("AppInfo", AppInfo::getInstance());
   engine.rootContext()->setContextProperty("SettingsHelper",
                                            SettingsHelper::getInstance());
-  engine.rootContext()->setContextProperty("InitalizrHelper",
-                                           InitalizrHelper::getInstance());
+  engine.rootContext()->setContextProperty("InitializrHelper",
+                                           InitializrHelper::getInstance());
   engine.rootContext()->setContextProperty("TranslateHelper",
                                            TranslateHelper::getInstance());
-
-  qmlRegisterType<CircularReveal>("example", 1, 0, "CircularReveal");
-  qmlRegisterType<FileWatcher>("example", 1, 0, "FileWatcher");
-  qmlRegisterType<FpsItem>("example", 1, 0, "FpsItem");
+  engine.rootContext()->setContextProperty("Network",Network::getInstance());
 
   const QUrl url(QStringLiteral("qrc:/qml/Main.qml"));
 
@@ -115,7 +130,7 @@ int main(int argc, char *argv[]) {
   engine.load(url);
   const int exec = QGuiApplication::exec();
   if (exec == 931) {
-    QProcess::startDetached(qApp->applicationFilePath(), QStringList());
+    QProcess::startDetached(qApp->applicationFilePath(), qApp->arguments());
   }
 
   return exec;

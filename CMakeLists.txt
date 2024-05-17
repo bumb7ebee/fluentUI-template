@@ -32,8 +32,8 @@ endif()
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Quick Svg Network)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Quick Svg Network)
 
-find_program(QT_LUPDATE NAMES lupdate)
-find_program(QT_LRELEASE NAMES lrelease)
+find_program(QT_LUPDATE NAMES lupdate-qt6)
+find_program(QT_LRELEASE NAMES lrelease-qt6)
 file(GLOB TS_FILE_PATHS ${CMAKE_SOURCE_DIR}/ *.ts)
 add_custom_target(script-update_translations
     COMMAND ${QT_LUPDATE} ${CMAKE_SOURCE_DIR} -ts ${PROJECT_NAME}_en_US.ts WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
@@ -70,7 +70,7 @@ if(WIN32)
     )
 configure_file(
     ${CMAKE_SOURCE_DIR}/.cmake/InstallerScript.iss.in
-    ${CMAKE_SOURCE_DIR}/dist/InstallerScript.iss
+    ${CMAKE_SOURCE_DIR}/package/InstallerScript.iss
 )
 endif()
 
@@ -153,7 +153,7 @@ if (CMAKE_BUILD_TYPE MATCHES "Release")
         add_custom_target(script-deploy_release
             COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_SOURCE_DIR}/dist
             COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_RUNTIME_OUTPUT_DIRECTORY} ${CMAKE_SOURCE_DIR}/dist
-            COMMAND ${QT_DEPLOY_QT} ${CMAKE_SOURCE_DIR}/dist/${PROJECT_NAME}.exe -qmldir=${CMAKE_SOURCE_DIR}
+            COMMAND ${QT_DEPLOY_QT} --qmldir=${CMAKE_CURRENT_LIST_DIR} --plugindir ${CMAKE_SOURCE_DIR}/dist/plugins --no-translations --compiler-runtime ${CMAKE_SOURCE_DIR}/dist/${PROJECT_NAME}.exe
             COMMENT "Deploying Qt Dependencies...................."
             SOURCES ${CMAKE_SOURCE_DIR}/CMakeLists.txt
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}

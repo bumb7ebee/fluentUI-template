@@ -9,11 +9,10 @@ FluScrollablePage{
 
     title: qsTr("ComboBox")
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
-        height: 80
-        paddings: 5
-        Layout.topMargin: 20
+        Layout.preferredHeight: 80
+        padding: 5
         Column{
             spacing: 5
             anchors.verticalCenter: parent.verticalCenter
@@ -32,10 +31,10 @@ FluScrollablePage{
         }
     }
 
-    FluArea {
+    FluFrame {
         Layout.fillWidth: true
-        height: 80
-        paddings: 5
+        Layout.preferredHeight: 80
+        padding: 5
         Layout.topMargin: 20
         Column{
             spacing: 5
@@ -56,10 +55,10 @@ FluScrollablePage{
         }
     }
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
         height: 80
-        paddings: 10
+        padding: 10
         Layout.topMargin: 20
         Column{
             spacing: 5
@@ -85,7 +84,7 @@ FluScrollablePage{
     }
     CodeExpander{
         Layout.fillWidth: true
-        Layout.topMargin: -1
+        Layout.topMargin: -6
         code:'FluComboBox{
     editable: true
     model: ListModel {

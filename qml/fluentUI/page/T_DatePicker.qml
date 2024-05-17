@@ -7,13 +7,12 @@ import "../component"
 
 FluScrollablePage{
 
-    title: qsTr("TimePicker")
+    title: qsTr("DatePicker")
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
-        Layout.topMargin: 20
-        height: 80
-        paddings: 10
+        Layout.preferredHeight: 80
+        padding: 10
         ColumnLayout{
             anchors{
                 verticalCenter: parent.verticalCenter
@@ -32,17 +31,17 @@ FluScrollablePage{
     }
     CodeExpander{
         Layout.fillWidth: true
-        Layout.topMargin: -1
+        Layout.topMargin: -6
         code:'FluDatePicker{
 
 }'
     }
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
         Layout.topMargin: 20
-        height: 80
-        paddings: 10
+        Layout.preferredHeight: 80
+        padding: 10
         ColumnLayout{
             anchors{
                 verticalCenter: parent.verticalCenter
@@ -61,7 +60,7 @@ FluScrollablePage{
     }
     CodeExpander{
         Layout.fillWidth: true
-        Layout.topMargin: -1
+        Layout.topMargin: -6
         code:'FluDatePicker{
     showYear:false
 }'

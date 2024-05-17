@@ -4,38 +4,24 @@ import QtQuick.Window 2.15
 import QtQuick.Controls 2.15
 import FluentUI 1.0
 import "../component"
-import "../viewmodel"
 import "../global"
 
 FluScrollablePage{
 
     title: qsTr("Settings")
 
-    SettingsViewModel{
-        id:viewmodel_settings
-    }
-
     FluEvent{
-        id:event_checkupdate_finish
         name: "checkUpdateFinish"
         onTriggered: {
             btn_checkupdate.loading = false
         }
     }
 
-    Component.onCompleted: {
-        FluEventBus.registerEvent(event_checkupdate_finish)
-    }
-
-    Component.onDestruction: {
-        FluEventBus.unRegisterEvent(event_checkupdate_finish)
-    }
-
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
         Layout.topMargin: 20
-        height: 60
-        paddings: 10
+        Layout.preferredHeight: 60
+        padding: 10
         Row{
             spacing: 20
             anchors.verticalCenter: parent.verticalCenter
@@ -56,11 +42,11 @@ FluScrollablePage{
         }
     }
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
         Layout.topMargin: 20
         height: 50
-        paddings: 10
+        padding: 10
         FluCheckBox{
             text: qsTr("Use System AppBar")
             checked: FluApp.useSystemAppBar
@@ -72,11 +58,11 @@ FluScrollablePage{
         }
     }
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
         Layout.topMargin: 20
         height: 50
-        paddings: 10
+        padding: 10
         FluCheckBox{
             text:qsTr("Fits AppBar Windows")
             checked: window.fitsAppBarWindows
@@ -95,15 +81,15 @@ FluScrollablePage{
         negativeText: qsTr("Cancel")
         positiveText: qsTr("OK")
         onPositiveClicked: {
-            FluApp.exit(931)
+            FluRouter.exit(931)
         }
     }
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
         Layout.topMargin: 20
         height: 128
-        paddings: 10
+        padding: 10
 
         ColumnLayout{
             spacing: 5
@@ -129,11 +115,11 @@ FluScrollablePage{
         }
     }
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
         Layout.topMargin: 20
         height: 160
-        paddings: 10
+        padding: 10
 
         ColumnLayout{
             spacing: 5
@@ -149,10 +135,10 @@ FluScrollablePage{
             Repeater{
                 model: [{title:qsTr("Open"),mode:FluNavigationViewType.Open},{title:qsTr("Compact"),mode:FluNavigationViewType.Compact},{title:qsTr("Minimal"),mode:FluNavigationViewType.Minimal},{title:qsTr("Auto"),mode:FluNavigationViewType.Auto}]
                 delegate: FluRadioButton{
-                    checked : viewmodel_settings.displayMode===modelData.mode
-                    text:modelData.title
+                    text: modelData.title
+                    checked: GlobalModel.displayMode === modelData.mode
                     clickListener:function(){
-                        viewmodel_settings.displayMode = modelData.mode
+                        GlobalModel.displayMode = modelData.mode
                     }
                 }
             }
@@ -169,11 +155,11 @@ FluScrollablePage{
         }
     }
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
         Layout.topMargin: 20
         height: 80
-        paddings: 10
+        padding: 10
 
         ColumnLayout{
             spacing: 10

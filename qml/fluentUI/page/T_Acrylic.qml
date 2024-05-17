@@ -11,7 +11,6 @@ FluScrollablePage{
 
     RowLayout{
         spacing: 10
-        Layout.topMargin: 20
         FluText{
             text:"tintColor:"
             Layout.alignment: Qt.AlignVCenter
@@ -42,10 +41,10 @@ FluScrollablePage{
             value: 32
         }
     }
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
-        height: 1200/4+20
-        paddings: 10
+        Layout.preferredHeight: 1200/4+20
+        padding: 10
         Layout.topMargin: 10
         FluClip{
             width: 1920/4
@@ -54,7 +53,7 @@ FluScrollablePage{
             Image {
                 id:image
                 asynchronous: true
-                source: "qrc:/res/image/bg_scenic.png"
+                source: "qrc:/res/image/bg_scenic.jpg"
                 anchors.fill: parent
                 sourceSize: Qt.size(2*width,2*height)
             }
@@ -72,7 +71,7 @@ FluScrollablePage{
                     anchors.centerIn: parent
                     text: "Acrylic"
                     color: "#FFFFFF"
-                    font.bold: true
+                    font: FluTextStyle.Subtitle
                 }
                 MouseArea {
                     property point clickPos: Qt.point(0,0)
@@ -95,7 +94,7 @@ FluScrollablePage{
     }
     CodeExpander{
         Layout.fillWidth: true
-        Layout.topMargin: -1
+        Layout.topMargin: -6
         code:'Image{
     id:image
     width: 800

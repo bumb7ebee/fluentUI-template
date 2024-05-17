@@ -9,11 +9,10 @@ FluScrollablePage{
 
     title: qsTr("Clip")
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
-        Layout.topMargin: 20
-        height: 380
-        paddings: 10
+        Layout.preferredHeight: 380
+        padding: 10
 
         Column{
             spacing: 15
@@ -88,7 +87,7 @@ FluScrollablePage{
     }
     CodeExpander{
         Layout.fillWidth: true
-        Layout.topMargin: -1
+        Layout.topMargin: -6
         code:'FluClip{
     radius: [25,25,25,25]
     width: 50

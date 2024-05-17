@@ -4,30 +4,20 @@ import QtQuick.Layouts 1.15
 import QtQuick.Window 2.15
 import FluentUI 1.0
 import "../component"
-import "../viewmodel"
 
 FluScrollablePage{
 
     title: qsTr("TextBox")
 
-    TextBoxViewModel{
-        id:viewModel
-    }
-
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
-        height: 68
-        paddings: 10
-        Layout.topMargin: 20
+        Layout.preferredHeight: 68
+        padding: 10
 
         FluTextBox{
             placeholderText: qsTr("Single-line Input Box")
             disabled: text_box_switch.checked
             cleanEnabled: true
-            text: viewModel.text1
-            onTextChanged: {
-                viewModel.text1 = text
-            }
             anchors{
                 verticalCenter: parent.verticalCenter
                 left: parent.left
@@ -45,16 +35,16 @@ FluScrollablePage{
     }
     CodeExpander{
         Layout.fillWidth: true
-        Layout.topMargin: -1
+        Layout.topMargin: -6
         code:'FluTextBox{
     placeholderText: qsTr("Single-line Input Box")
 }'
     }
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
-        height: 68
-        paddings: 10
+        Layout.preferredHeight: 68
+        padding: 10
         Layout.topMargin: 20
 
         FluPasswordBox{
@@ -76,26 +66,21 @@ FluScrollablePage{
     }
     CodeExpander{
         Layout.fillWidth: true
-        Layout.topMargin: -1
+        Layout.topMargin: -6
         code:'FluPasswordBox{
     placeholderText: qsTr("Please enter your password")
 }'
     }
 
-
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
-        height: 36+multiine_textbox.height
-        paddings: 10
+        Layout.preferredHeight: 36+multiine_textbox.height
+        padding: 10
         Layout.topMargin: 20
 
         FluMultilineTextBox{
             id: multiine_textbox
             placeholderText: qsTr("Multi-line Input Box")
-            text:viewModel.text2
-            onTextChanged: {
-                viewModel.text2 = text
-            }
             disabled: text_box_multi_switch.checked
             anchors{
                 verticalCenter: parent.verticalCenter
@@ -114,16 +99,16 @@ FluScrollablePage{
     }
     CodeExpander{
         Layout.fillWidth: true
-        Layout.topMargin: -1
+        Layout.topMargin: -6
         code:'FluMultilineTextBox{
     placeholderText: qsTr("Multi-line Input Box")
 }'
     }
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
-        height: 68
-        paddings: 10
+        Layout.preferredHeight: 68
+        padding: 10
         Layout.topMargin: 20
         FluAutoSuggestBox{
             placeholderText: qsTr("AutoSuggestBox")
@@ -145,16 +130,16 @@ FluScrollablePage{
     }
     CodeExpander{
         Layout.fillWidth: true
-        Layout.topMargin: -1
+        Layout.topMargin: -6
         code:'FluAutoSuggestBox{
     placeholderText: qsTr("AutoSuggestBox")
 }'
     }
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
-        height: 68
-        paddings: 10
+        Layout.preferredHeight: 68
+        padding: 10
         Layout.topMargin: 20
         FluSpinBox{
             disabled: spin_box_switch.checked
@@ -174,7 +159,7 @@ FluScrollablePage{
     }
     CodeExpander{
         Layout.fillWidth: true
-        Layout.topMargin: -1
+        Layout.topMargin: -6
         code:'FluSpinBox{
 
 }'

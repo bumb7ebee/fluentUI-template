@@ -8,23 +8,23 @@ import "../component"
 FluScrollablePage{
 
     property string password: ""
-    property var loginPageRegister: registerForWindowResult("/login")
 
     title: qsTr("MultiWindow")
 
-    Connections{
-        target: loginPageRegister
-        function onResult(data)
-        {
-            password = data.password
-        }
+    FluWindowResultLauncher{
+        id:loginResultLauncher
+        path: "/login"
+        onResult:
+            (data)=>{
+                password = data.password
+            }
+
     }
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
-        height: 86
-        paddings: 10
-        Layout.topMargin: 20
+        Layout.preferredHeight: 86
+        padding: 10
         Column{
             spacing: 15
             anchors{
@@ -37,16 +37,16 @@ FluScrollablePage{
             FluButton{
                 text: qsTr("Create Window")
                 onClicked: {
-                    FluApp.navigate("/standardWindow")
+                    FluRouter.navigate("/standardWindow")
                 }
             }
         }
     }
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
-        height: 86
-        paddings: 10
+        Layout.preferredHeight: 86
+        padding: 10
         Layout.topMargin: 10
         Column{
             spacing: 15
@@ -61,16 +61,16 @@ FluScrollablePage{
             FluButton{
                 text: qsTr("Create Window")
                 onClicked: {
-                    FluApp.navigate("/singleTaskWindow")
+                    FluRouter.navigate("/singleTaskWindow")
                 }
             }
         }
     }
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
-        height: 86
-        paddings: 10
+        Layout.preferredHeight: 86
+        padding: 10
         Layout.topMargin: 10
         Column{
             spacing: 15
@@ -84,14 +84,14 @@ FluScrollablePage{
             FluButton{
                 text: qsTr("Create Window")
                 onClicked: {
-                    FluApp.navigate("/singleInstanceWindow")
+                    FluRouter.navigate("/singleInstanceWindow")
                 }
             }
         }
     }
     CodeExpander{
         Layout.fillWidth: true
-        Layout.topMargin: -1
+        Layout.topMargin: -6
         code:'FluWindow{
   //launchMode: FluWindowType.Standard
   //launchMode: FluWindowType.SingleTask
@@ -101,10 +101,10 @@ FluScrollablePage{
     }
 
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
-        height: 100
-        paddings: 10
+        Layout.preferredHeight: 100
+        padding: 10
         Layout.topMargin: 20
         Column{
             spacing: 15
@@ -118,27 +118,27 @@ FluScrollablePage{
             FluButton{
                 text: qsTr("Create Window")
                 onClicked: {
-                    FluApp.navigate("/about")
+                    FluRouter.navigate("/about")
                 }
             }
         }
     }
     CodeExpander{
         Layout.fillWidth: true
-        Layout.topMargin: -1
+        Layout.topMargin: -6
         code:'FluButton{
     text: qsTr("Create Window")
     onClicked: {
-        FluApp.navigate("/about")
+        FluRouter.navigate("/about")
     }
 }
 '
     }
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
-        height: 130
-        paddings: 10
+        Layout.preferredHeight: 130
+        padding: 10
         Layout.topMargin: 20
 
         Column{
@@ -153,7 +153,7 @@ FluScrollablePage{
             FluButton{
                 text: qsTr("Create Window")
                 onClicked: {
-                    loginPageRegister.launch({username:"zhuzichu"})
+                    loginResultLauncher.launch({username:"zhuzichu"})
                 }
             }
             FluText{
@@ -163,21 +163,20 @@ FluScrollablePage{
     }
     CodeExpander{
         Layout.fillWidth: true
-        Layout.topMargin: -1
-        code:'property var loginPageRegister: registerForWindowResult("/login")
-
-Connections{
-    target: loginPageRegister
-    function onResult(data)
-    {
-        password = data.password
-    }
+        Layout.topMargin: -6
+        code:'FluWindowResultLauncher{
+    id:loginResultLauncher
+    path: "/login"
+    onResult:
+        (data)=>{
+            password = data.password
+     }
 }
 
 FluButton{
     text: qsTr("Create Window")
     onClicked: {
-        loginPageRegister.launch({username:"zhuzichu"})
+        loginResultLauncher.launch({username:"zhuzichu"})
     }
 }
 '

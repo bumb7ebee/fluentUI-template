@@ -11,11 +11,10 @@ FluScrollablePage{
     id: root
     title: qsTr("Theme")
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
-        Layout.topMargin: 20
-        Layout.preferredHeight: 340
-        paddings: 10
+        Layout.preferredHeight: 408
+        padding: 10
 
         ColumnLayout{
             spacing:0
@@ -115,16 +114,27 @@ FluScrollablePage{
             }
             FluToggleSwitch{
                 Layout.topMargin: 5
-                checked: FluTheme.enableAnimation
+                checked: FluTheme.animationEnabled
                 onClicked: {
-                    FluTheme.enableAnimation = !FluTheme.enableAnimation
+                    FluTheme.animationEnabled = !FluTheme.animationEnabled
+                }
+            }
+            FluText{
+                text: qsTr("Open Blur Window")
+                Layout.topMargin: 20
+            }
+            FluToggleSwitch{
+                Layout.topMargin: 5
+                checked: FluTheme.blurBehindWindowEnabled
+                onClicked: {
+                    FluTheme.blurBehindWindowEnabled = !FluTheme.blurBehindWindowEnabled
                 }
             }
         }
     }
     CodeExpander{
         Layout.fillWidth: true
-        Layout.topMargin: -1
+        Layout.topMargin: -6
         code:'FluTheme.accentColor = FluColors.Orange
 
 FluTheme.dark = true

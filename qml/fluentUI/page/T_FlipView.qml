@@ -9,11 +9,10 @@ FluScrollablePage{
 
     title: qsTr("FlipView")
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
-        height: 340
-        paddings: 10
-        Layout.topMargin: 20
+        Layout.preferredHeight: 340
+        padding: 10
         ColumnLayout{
             anchors.verticalCenter: parent.verticalCenter
             FluText{
@@ -40,7 +39,7 @@ FluScrollablePage{
     }
     CodeExpander{
         Layout.fillWidth: true
-        Layout.topMargin: -1
+        Layout.topMargin: -6
         code:'FluFlipView{
     Image{
         source: "qrc:/res/image/banner_1.jpg"
@@ -61,10 +60,10 @@ FluScrollablePage{
 '
     }
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
         height: 340
-        paddings: 10
+        padding: 10
         Layout.topMargin: 20
         ColumnLayout{
             anchors.verticalCenter: parent.verticalCenter
@@ -93,7 +92,7 @@ FluScrollablePage{
     }
     CodeExpander{
         Layout.fillWidth: true
-        Layout.topMargin: -1
+        Layout.topMargin: -6
         code:'FluFlipView{
     vertical:true
     Image{

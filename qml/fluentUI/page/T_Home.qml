@@ -9,11 +9,8 @@ import "../global"
 FluScrollablePage{
 
     launchMode: FluPageType.SingleTask
-    animDisabled: true
-
-    FluentInitalizrWindow{
-        id:fluent_initalizr
-    }
+    animationEnabled: false
+    header: Item{}
 
     ListModel{
         id: model_header
@@ -28,11 +25,11 @@ FluScrollablePage{
         }
         ListElement{
             icon: "qrc:/res/image/favicon.ico"
-            title: qsTr("FluentUI Initalizr")
+            title: qsTr("FluentUI Initializr")
             desc: qsTr("FluentUI Initializr is a Tool that helps you create and customize Fluent UI projects with various options.")
             url: "https://github.com/zhuzichu520/FluentUI"
             clicked: function(model){
-                fluent_initalizr.showDialog()
+                fluent_Initializr.showDialog()
             }
         }
     }
@@ -121,6 +118,7 @@ FluScrollablePage{
                             Layout.leftMargin: 20
                             color: FluColors.Grey120
                             font.pixelSize: 12
+                            font.family: FluTextStyle.family
                             wrapMode: Text.WrapAnywhere
                         }
                     }
@@ -177,7 +175,7 @@ FluScrollablePage{
             property string desc: modelData.extra.desc
             width: 320
             height: 120
-            FluArea{
+            FluFrame{
                 radius: 8
                 width: 300
                 height: 100

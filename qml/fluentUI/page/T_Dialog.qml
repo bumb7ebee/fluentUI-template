@@ -9,11 +9,10 @@ FluScrollablePage{
 
     title: qsTr("Dialog")
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
-        height: 68
-        paddings: 10
-        Layout.topMargin: 20
+        Layout.preferredHeight: 68
+        padding: 10
         FluButton{
             anchors.verticalCenter: parent.verticalCenter
             text: qsTr("Show Double Button Dialog")
@@ -24,7 +23,7 @@ FluScrollablePage{
     }
     CodeExpander{
         Layout.fillWidth: true
-        Layout.topMargin: -1
+        Layout.topMargin: -6
         code:'FluContentDialog{
     id:dialog
     title: qsTr("Friendly Reminder")
@@ -57,10 +56,10 @@ FluScrollablePage{
         }
     }
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
-        height: 68
-        paddings: 10
+        Layout.preferredHeight: 68
+        padding: 10
         Layout.topMargin: 20
         FluButton{
             anchors.verticalCenter: parent.verticalCenter
@@ -72,7 +71,7 @@ FluScrollablePage{
     }
     CodeExpander{
         Layout.fillWidth: true
-        Layout.topMargin: -1
+        Layout.topMargin: -6
         code:'FluContentDialog{
     id: dialog
     title: qsTr("Friendly Reminder")
@@ -114,10 +113,10 @@ FluScrollablePage{
         }
     }
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
-        height: 100
-        paddings: 10
+        Layout.preferredHeight: 100
+        padding: 10
         Layout.topMargin: 20
         FluButton{
             anchors.top: parent.top
@@ -138,7 +137,7 @@ FluScrollablePage{
     }
     CodeExpander{
         Layout.fillWidth: true
-        Layout.topMargin: -1
+        Layout.topMargin: -6
         code:'FluContentDialog{
     id: dialog
     title: qsTr("Friendly Reminder")

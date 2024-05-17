@@ -105,6 +105,12 @@ FluObject{
             onTap: { navigationView.push(url) }
         }
         FluPaneItem{
+            title: qsTr("GroupBox")
+            menuDelegate: paneItemMenu
+            url: "qrc:/qml/fluentUI/page/T_GroupBox.qml"
+            onTap: { navigationView.push(url) }
+        }
+        FluPaneItem{
             title: qsTr("PaneItem Disabled")
             disabled: true
             icon: FluentIcons.Error
@@ -271,6 +277,12 @@ FluObject{
             url: "qrc:/qml/fluentUI/page/T_Menu.qml"
             onTap: { navigationView.push(url) }
         }
+        FluPaneItem{
+            title: qsTr("Sheet")
+            menuDelegate: paneItemMenu
+            url: "qrc:/qml/fluentUI/page/T_Sheet.qml"
+            onTap: { navigationView.push(url) }
+        }
     }
 
     FluPaneItemExpander{
@@ -352,9 +364,9 @@ FluObject{
             onTap: { navigationView.push(url) }
         }
         FluPaneItem{
-            title: qsTr("Awesome")
+            title: qsTr("Icons")
             menuDelegate: paneItemMenu
-            url: "qrc:/qml/fluentUI/page/T_Awesome.qml"
+            url: "qrc:/qml/fluentUI/page/T_Icons.qml"
             onTap: { navigationView.push(url) }
         }
     }
@@ -415,6 +427,12 @@ FluObject{
         title: qsTr("Other")
         icon: FluentIcons.Shop
         FluPaneItem{
+            title: qsTr("OpenGL")
+            menuDelegate: paneItemMenu
+            url: "qrc:/qml/fluentUI/page/T_OpenGL.qml"
+            onTap: { navigationView.push(url) }
+        }
+        FluPaneItem{
             title: qsTr("QRCode")
             menuDelegate: paneItemMenu
             url: "qrc:/qml/fluentUI/page/T_QRCode.qml"
@@ -462,20 +480,16 @@ FluObject{
         FluPaneItem{
             title: qsTr("Hot Loader")
             onTapListener: function(){
-                FluApp.navigate("/hotload")
+                FluRouter.navigate("/hotload")
             }
         }
         FluPaneItem{
-            title: qsTr("3D")
-            menuDelegate: paneItemMenu
-            url: "qrc:/qml/fluentUI/page/T_3D.qml"
-            onTap: { navigationView.push(url) }
-        }
-        FluPaneItem{
             title: qsTr("Test Crash")
-            visible: FluTools.isWin()
             onTapListener: function(){
                 AppInfo.testCrash()
+            }
+            Component.onCompleted: {
+                visible = FluTools.isWin()
             }
         }
     }

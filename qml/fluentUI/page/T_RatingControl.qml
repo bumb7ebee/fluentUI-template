@@ -9,11 +9,10 @@ FluScrollablePage {
 
     title: qsTr("RatingControl")
 
-    FluArea {
+    FluFrame {
         Layout.fillWidth: true
-        height: 100
-        paddings: 10
-        Layout.topMargin: 20
+        Layout.preferredHeight: 100
+        padding: 10
 
         Column {
             spacing: 10
@@ -27,7 +26,7 @@ FluScrollablePage {
 
     CodeExpander {
         Layout.fillWidth: true
-        Layout.topMargin: -1
+        Layout.topMargin: -6
         code: 'FluRatingControl{
 
 }'

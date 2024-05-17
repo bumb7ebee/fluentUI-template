@@ -18,11 +18,10 @@ FluScrollablePage{
         ]
     }
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
-        height: 130
-        paddings: 10
-        Layout.topMargin: 20
+        Layout.preferredHeight: 130
+        padding: 10
 
         FluFilledButton{
             anchors{
@@ -66,7 +65,7 @@ FluScrollablePage{
     }
     CodeExpander{
         Layout.fillWidth: true
-        Layout.topMargin: -1
+        Layout.topMargin: -6
         code:'FluTour{
     id:tour
     steps:[

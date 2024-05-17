@@ -9,9 +9,8 @@ FluContentPage{
 
     title: qsTr("Watermark")
 
-    FluArea{
+    FluFrame{
         anchors.fill: parent
-        anchors.topMargin: 20
 
         ColumnLayout{
             anchors{

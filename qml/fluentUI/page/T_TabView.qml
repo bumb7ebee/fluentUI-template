@@ -29,11 +29,10 @@ FluScrollablePage{
         newTab()
     }
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
-        Layout.topMargin: 20
-        height: 50
-        paddings: 10
+        Layout.preferredHeight: 50
+        padding: 10
         RowLayout{
             spacing: 14
             FluDropDownButton{
@@ -91,11 +90,11 @@ FluScrollablePage{
         }
     }
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
         Layout.topMargin: 15
-        height: 400
-        paddings: 10
+        Layout.preferredHeight: 400
+        padding: 10
         FluTabView{
             id:tab_view
             onNewPressed:{
@@ -105,7 +104,7 @@ FluScrollablePage{
     }
     CodeExpander{
         Layout.fillWidth: true
-        Layout.topMargin: -1
+        Layout.topMargin: -6
         code:'FluTabView{
     anchors.fill: parent
     Component.onCompleted: {

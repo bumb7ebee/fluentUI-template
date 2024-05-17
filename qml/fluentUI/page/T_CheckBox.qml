@@ -9,11 +9,10 @@ FluScrollablePage{
 
     title: qsTr("CheckBox")
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
-        height: 72
-        paddings: 10
-        Layout.topMargin: 20
+        Layout.preferredHeight: 72
+        padding: 10
 
         FluText{
             text: qsTr("A 2-state CheckBox")
@@ -49,16 +48,16 @@ FluScrollablePage{
     }
     CodeExpander{
         Layout.fillWidth: true
-        Layout.topMargin: -1
+        Layout.topMargin: -6
         code:'FluCheckBox{
     text:"Text"
 }'
     }
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
-        height: 72
-        paddings: 10
+        Layout.preferredHeight: 72
+        padding: 10
         Layout.topMargin: 20
 
         FluText{
@@ -104,7 +103,7 @@ FluScrollablePage{
     }
     CodeExpander{
         Layout.fillWidth: true
-        Layout.topMargin: -1
+        Layout.topMargin: -6
         code:'FluCheckBox{
     text:"Text"
     indeterminate:true

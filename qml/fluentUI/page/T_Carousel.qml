@@ -22,11 +22,10 @@ FluScrollablePage{
         }
     }
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
         height: 370
-        paddings: 10
-        Layout.topMargin: 20
+        padding: 10
         Column{
             spacing: 15
             anchors{
@@ -62,10 +61,10 @@ FluScrollablePage{
         }
     }
 
-    FluArea{
+    FluFrame{
         Layout.fillWidth: true
         height: 340
-        paddings: 10
+        padding: 10
         Layout.topMargin: 10
         Column{
             spacing: 15
@@ -104,7 +103,6 @@ FluScrollablePage{
                                     horizontalAlignment: Qt.AlignHCenter
                                     text:model.title
                                     color: FluColors.Grey10
-                                    font.pixelSize: 15
                                 }
                             }
                         }
@@ -126,7 +124,7 @@ FluScrollablePage{
 
     CodeExpander{
         Layout.fillWidth: true
-        Layout.topMargin: -1
+        Layout.topMargin: -6
         code:'FluCarousel{
     id:carousel
     width: 400

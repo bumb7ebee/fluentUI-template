@@ -9,10 +9,10 @@ FluScrollablePage{
 
     title: qsTr("Pie Chart")
 
-    FluArea{
-        width: 500
-        height: 370
-        paddings: 10
+    FluFrame{
+        Layout.preferredWidth: 500
+        Layout.preferredHeight: 370
+        padding: 10
         Layout.topMargin: 20
         FluChart{
             anchors.fill: parent
@@ -50,10 +50,10 @@ FluScrollablePage{
         }
     }
 
-    FluArea{
-        width: 500
-        height: 370
-        paddings: 10
+    FluFrame{
+        Layout.preferredWidth: 500
+        Layout.preferredHeight: 370
+        padding: 10
         Layout.topMargin: 20
         FluChart{
             anchors.fill: parent

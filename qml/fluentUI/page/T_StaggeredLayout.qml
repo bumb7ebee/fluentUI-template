@@ -27,7 +27,6 @@ FluContentPage{
     Flickable{
         id: scroll
         anchors.fill: parent
-        anchors.topMargin: 20
         boundsBehavior:Flickable.StopAtBounds
         contentHeight: staggered_view.implicitHeight
         clip: true
@@ -43,8 +42,7 @@ FluContentPage{
                 FluText{
                     color:"#FFFFFF"
                     text:model.index
-                    font.bold: true
-                    font.pixelSize: 18
+                    font: FluTextStyle.Title
                     anchors.centerIn: parent
                 }
             }

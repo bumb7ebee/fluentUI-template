@@ -32,8 +32,8 @@ endif()
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Quick Svg Network)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Quick Svg Network)
 
-find_program(QT_LUPDATE NAMES lupdate-qt6)
-find_program(QT_LRELEASE NAMES lrelease-qt6)
+find_program(QT_LUPDATE NAMES lupdate lupdate-qt6)
+find_program(QT_LRELEASE NAMES lrelease lrelease-qt6)
 file(GLOB TS_FILE_PATHS ${CMAKE_SOURCE_DIR}/ *.ts)
 add_custom_target(script-update_translations
     COMMAND ${QT_LUPDATE} ${CMAKE_SOURCE_DIR} -ts ${PROJECT_NAME}_en_US.ts WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
@@ -74,8 +74,8 @@ configure_file(
 )
 endif()
 
-# qt_add_big_resources(QRC_RESOURCES res.qrc)
-qt_add_resources(QRC_RESOURCES res.qrc)
+# qt_add_resources(QRC_RESOURCES res.qrc)
+qt_add_big_resources(QRC_RESOURCES res.qrc)
 list(APPEND QRC_RESOURCES res.qrc)
 set_property(SOURCE res.qrc PROPERTY SKIP_AUTORCC ON)
 list(APPEND sources_files ${QRC_RESOURCES})
@@ -153,7 +153,7 @@ if (CMAKE_BUILD_TYPE MATCHES "Release")
         add_custom_target(script-deploy_release
             COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_SOURCE_DIR}/dist
             COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_RUNTIME_OUTPUT_DIRECTORY} ${CMAKE_SOURCE_DIR}/dist
-            COMMAND ${QT_DEPLOY_QT} --qmldir=${CMAKE_CURRENT_LIST_DIR} --plugindir ${CMAKE_SOURCE_DIR}/dist/plugins --no-translations --compiler-runtime ${CMAKE_SOURCE_DIR}/dist/${PROJECT_NAME}.exe
+            COMMAND ${QT_DEPLOY_QT} --qmldir=${CMAKE_SOURCE_DIR} --plugindir ${CMAKE_SOURCE_DIR}/dist/plugins --no-translations --compiler-runtime ${CMAKE_SOURCE_DIR}/dist/${PROJECT_NAME}.exe
             COMMENT "Deploying Qt Dependencies...................."
             SOURCES ${CMAKE_SOURCE_DIR}/CMakeLists.txt
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}

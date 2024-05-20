@@ -195,14 +195,14 @@
         <file compress-algo="best">qml/fluentUI/page/T_Watermark.qml</file>
 
         <file compress-algo="best">qml/fluentUI/window/AboutWindow.qml</file>
+        <file compress-algo="best">qml/fluentUI/window/CrashWindow.qml</file>
+        <file compress-algo="best">qml/fluentUI/window/FluentInitializrWindow.qml</file>
         <file compress-algo="best">qml/fluentUI/window/HotloadWindow.qml</file>
         <file compress-algo="best">qml/fluentUI/window/LoginWindow.qml</file>
+        <file compress-algo="best">qml/fluentUI/window/PageWindow.qml</file>
         <file compress-algo="best">qml/fluentUI/window/SingleInstanceWindow.qml</file>
         <file compress-algo="best">qml/fluentUI/window/SingleTaskWindow.qml</file>
         <file compress-algo="best">qml/fluentUI/window/StandardWindow.qml</file>
-        <file compress-algo="best">qml/fluentUI/window/PageWindow.qml</file>
-        <file compress-algo="best">qml/fluentUI/window/CrashWindow.qml</file>
-        <file compress-algo="best">qml/fluentUI/window/FluentInitalizrWindow.qml</file>
 
         <!-- iaksoy -->
         <file compress-algo="best">res/image/favicon.ico</file>
